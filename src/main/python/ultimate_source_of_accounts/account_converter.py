@@ -23,5 +23,4 @@ def get_converted_aws_accounts(accounts):
         raise Exception("Failed to convert to yaml and json: {0}".format(exc))
     logging.debug("Data successfully converted to yaml and json")
 
-    return {FILENAME + ".yaml": yaml_data,
-            FILENAME + ".json": json_data}
+    return {f"{FILENAME}.yaml": yaml_data, f"{FILENAME}.json": json_data}

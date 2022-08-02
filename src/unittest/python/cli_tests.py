@@ -78,7 +78,7 @@ class UploadTest(TestCase):
         with self.assertLogs(level=logging.WARN) as cm:
             self.assertRaises(Exception, cli._main, self.arguments)
         logged_output = "\n".join(cm.output)
-        self.assertRegex(logged_output, ".*" + self.tempdir + ".*" + message + ".*")
+        self.assertRegex(logged_output, f".*{self.tempdir}.*{message}.*")
 
 
 class CheckTest(TestCase):
